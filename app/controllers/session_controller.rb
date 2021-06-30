@@ -10,7 +10,11 @@ class SessionController < ApplicationController
         user=User.find_by(email: params[:session][:email].downcase)
         
         if user && user.authenticate(params[:session][:password])
-        
+            #sessionhelperから受け取ったメソッド
+            log_in user
+            #userにリダイレクト
+            redirect_to user
+            
         else
             #エラー時の処理
             flash[:denger]='メールアドレスもしくはパスワードが間違っています'

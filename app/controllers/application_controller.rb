@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-    def hello
-        render html: "hello,world"
-    end
+#本クラスはヘルパーのモジュール化に関与
+#上位クラスである本クラスにSessionHelperを組み込むと全てのコントローラでこれが使えるようになる。
+   protect_from_forgery with: :exception
+   include SessionHelper
 end
