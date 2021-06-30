@@ -23,7 +23,7 @@ class UsersController < ApplicationController
             flash[:success]="Welcome to the Sample App"
             #成功した際のリダイレクト先
             #登録ユーザーの詳細に飛べる
-            redirect_to user_url(@user)
+            redirect_to @user
         #保存が上手くいかないとき・・・
         else
             #新規作成に飛ぶ
