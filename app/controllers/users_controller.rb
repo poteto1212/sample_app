@@ -19,6 +19,9 @@ class UsersController < ApplicationController
         
         #DBへの保存処理
         if @user.save
+            #ユーザー登録時に自動ログイン
+            log_in @user
+            
         #成功事時の表示テロップ
             flash[:success]="Welcome to the Sample App"
             #成功した際のリダイレクト先

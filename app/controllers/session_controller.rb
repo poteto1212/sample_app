@@ -23,5 +23,9 @@ class SessionController < ApplicationController
     end
     
     def destory
+        #ログアウト処理
+        log_out
+        #ログアウト後はホーム画面に
+        redirect_to root_url
     end
 end
